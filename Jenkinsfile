@@ -14,6 +14,7 @@ pipeline {
 
   stages {
     stage('Checkout') {
+      sh 'echo "Checkout Successful"'
       steps {
         git branch: 'main', url: 'https://github.com/MRDOM12/python-flask-app'
       }
