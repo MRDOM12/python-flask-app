@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE  = "YOUR_DOCKERHUB_USERNAME/python-flask-app"
+        DOCKER_IMAGE  = "aaronsbinu/python-flask-app"
         GIT_REPO_NAME = "python-flask-app"
         GIT_USER_NAME = "MRDOM12"
     }
