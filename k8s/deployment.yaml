@@ -1,4 +1,3 @@
-yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,21 +16,21 @@ spec:
         app: flask-app
     spec:
       containers:
-      - name: flask-container
-        image: aaronsbinu/python-flask-app:10
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5000
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        resources:
-          limits:
-            cpu: "250m"
-            memory: "256Mi"
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
+        - name: flask-container
+          image: aaronsbinu/python-flask-app:10
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
